@@ -7,4 +7,8 @@ Course - Docker in python project`s
 
 [dotenv](https://pypi.org/project/python-dotenv/)
 
+[black](https://pypi.org/project/black/)
+
+[flake8](https://pypi.org/project/flake8/)
+
 [.flake8 example](https://gist.github.com/krnd/1f3fb6c05af365977e486c47cb7b4a72) - example of configuration
