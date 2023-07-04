@@ -6,7 +6,7 @@ It echoes any incoming text messages.
 # import logging
 
 from aiogram import Bot, Dispatcher, types
-from src.settings import BOT_TOKEN
+from bot.src.settings import BOT_TOKEN
 
 # API_TOKEN = 'BOT TOKEN HERE'
 

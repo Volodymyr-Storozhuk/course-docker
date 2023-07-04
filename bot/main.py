@@ -1,5 +1,5 @@
 from aiogram import executor
-from src.echobot import dp
+from bot.src.echobot import dp
 
 
 if __name__ == "__main__":
