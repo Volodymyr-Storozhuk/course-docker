@@ -12,6 +12,6 @@ except KeyError as err:
     logging.critical(f"Can`t read token from enviroment variable. Message: {err}")
     raise KeyError(err)
 
-# test settinds module
+# for testing the settings module
 if __name__ == "__main__":
     print(BOT_TOKEN)
