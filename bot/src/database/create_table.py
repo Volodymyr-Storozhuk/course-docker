@@ -13,7 +13,7 @@ def execute_query(query, connection=conn):
 
 
 create_message_table = """
-CREATE TABLE messages (
+CREATE TABLE IF NOT EXISTS messages (
     id SERIAL PRIMARY KEY,
     message TEXT,
     user_id INTEGER NOT NULL,
