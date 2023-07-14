@@ -29,7 +29,7 @@ async def send_welcome(message: types.Message):
     This handler will be called when user sends `/start` or `/help` command
     """
 
-    timestamp_now = datetime.now(tz=ZoneInfo("EET")).isoformat(" ")
+    timestamp_now = datetime.now(tz=ZoneInfo("UTC")).isoformat(" ")
     insert_query_message = (f"""
         INSERT INTO messages (message, user_id, message_time)
         VALUES ('{message.text}', {message.from_user['id']}, '{timestamp_now}')
@@ -44,7 +44,7 @@ async def echo(message: types.Message):
     # old style:
     # await bot.send_message(message.chat.id, message.text)
 
-    timestamp_now = datetime.now(tz=ZoneInfo("EET")).isoformat(" ")
+    timestamp_now = datetime.now(tz=ZoneInfo("UTC")).isoformat(" ")
     insert_query_message = (f"INSERT INTO messages (message, user_id, message_time) "
                             f"VALUES ('{message.text}', {message.from_user['id']}, '{timestamp_now}')")
     execute_query(insert_query_message)
