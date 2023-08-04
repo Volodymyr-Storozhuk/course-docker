@@ -7,8 +7,8 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 from aiogram import Bot, Dispatcher, types
 # for run as module
-from bot.src.settings import BOT_TOKEN
-from bot.src.database.create_table import execute_query
+from src.settings import BOT_TOKEN
+from src.database.create_table import execute_query
 # for run as script
 # from src.settings import BOT_TOKEN
 # from src.database.create_table import execute_query

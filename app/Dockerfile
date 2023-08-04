@@ -20,13 +20,14 @@ WORKDIR /home/docker_user/app
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
 
 # cp project and copy requiremets
-COPY requirements.txt ./
+RUN pip install --upgrade pip
+COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 #  cp project
 COPY . .
 
 # run project
 # for run as module
-CMD ["python3", "-m", "bot.main"]
+CMD ["python3", "-m", "main"]
 # for run as script
 # CMD ["python3", "bot/main.py"]

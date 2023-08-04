@@ -1,37 +1,37 @@
 services:
-  course_docker:
-    container_name: course_docker_container
-    image: course_docker_image
-    build:
-      context: .
+  course:
+    container_name: docker_course_bot
+    image: docker_course_image
+    build: ./app
+      # context: .
     env_file:
-      - .env
-    environment:
-      BOT_TOKEN: "${BOT_TOKEN}"
+      - ./app/.env
+    # environment:
+    #   BOT_TOKEN: "${BOT_TOKEN}"
     depends_on:
-      - bot_db
+      - db
 
-  bot_db:
-    container_name: postgres_container
+  db:
+    container_name: docker_course_psql
     image: postgres:15.3
     volumes:
-      - postgres_data:/data/postgres
+      - ./dbdata/postgres:/data/postgres
     ports:
       - "5431:5432"
     env_file:
-      - .env
+      - ./app/.env
     environment:
       PGDATA: /data/postgres
 
 
   pgadmin:
-      container_name: pgadmin_container
+      container_name: docker_course_pgadmin
       image: dpage/pgadmin4
       profiles:
         - "dev"
       restart: on-failure
       env_file:
-        - .env
+        - ./app/.env
       ports:
         - "5050:80"
       volumes:
@@ -39,4 +39,4 @@ services:
 
 volumes:
   postgres_data:
-  pgadmin_data:
+  pgadmin_data: 
